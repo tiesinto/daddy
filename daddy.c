@@ -15,7 +15,7 @@
 
 typedef struct {
 	const char *name;
-	const char *bodilyfluid;
+	const char *gift;
 	const char *they;
 	const char *them;
 	const char *their;
@@ -107,12 +107,12 @@ main(int argc, char *argv[])
 	rstr(resbuf, "%%SWEETIE%%", sweetie[yrand]);
 	rstr(resbuf, "%%DISPARAGEMENT%%", disparagement[wrand]);
 	rstr(resbuf, "%%CAREGIVER%%", caregivers[drand].name);
-	rstr(resbuf, "%%FLUID%%", caregivers[drand].bodilyfluid);
-	rstr(resbuf, "%%THEY%%", caregivers[drand].their);
-	rstr(resbuf, "%%THEM%%", caregivers[drand].their);
+	rstr(resbuf, "%%GIFT%%", caregivers[drand].gift);
+	rstr(resbuf, "%%THEY%%", caregivers[drand].they);
+	rstr(resbuf, "%%THEM%%", caregivers[drand].them);
 	rstr(resbuf, "%%THEIR%%", caregivers[drand].their);
-	rstr(resbuf, "%%THEIRS%%", caregivers[drand].their);
-	rstr(resbuf, "%%THEMSELF%%", caregivers[drand].their);
+	rstr(resbuf, "%%THEIRS%%", caregivers[drand].theirs);
+	rstr(resbuf, "%%THEMSELF%%", caregivers[drand].themself);
 
 	fprintf(channel, "%s%s%s%s", nocol ? "" : ansi,
 			resbuf, ending, nocol ? "" : "\x1b[0m");   
