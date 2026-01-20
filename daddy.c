@@ -40,12 +40,14 @@ const char *const *response = compliments;
 int rlen = clen;
 
 static void
-usage(void) {
+usage(void)
+{
 	eprint("usage: daddy [-1cv] [[-e] command [args ...]]] [-s status]\n", argv0);
 }
 
 int
-main(int argc, char *argv[]) {
+main(int argc, char *argv[])
+{
 	srand(time(NULL));
 	channel = stderr;
 	char ansi[20];
