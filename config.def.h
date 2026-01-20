@@ -10,9 +10,9 @@ static const char *sweetie[] = { "boy", "sweetheart" };
 /* denigrating terms */
 static const char *disparagement[] = { "slut", "pervert" };
 
-/* caregivers' names, fluids and pronouns */
+/* caregivers' names, 'gift' and pronouns */
 static const Caregiver caregivers[] = {
-	/* name      fluid    they    them    their   theirs   themself */
+	/* name      gift     they    them    their   theirs   themself */
 	{ "daddy",   "cum",   "he",   "him",  "his",  "his",   "himself" },
 	{ "dada",    "cum",   "he",   "him",  "his",  "his",   "himself" },
 	/*{ "mommy",   "milk",  "she",  "her",  "her",  "hers",  "herself" },*/
