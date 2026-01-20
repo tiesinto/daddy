@@ -27,9 +27,9 @@ char *argv0;
 static char errbuf[4096];
 static char *opt_eval = NULL;
 static char *opt_status = "0";
-int nocol = 0;
 int crand;
-static FILE *channel = NULL;
+static FILE *channel = Nint nocol = 0;
+ULL;
 
 #include "config.h"
 #include "util.c"
@@ -48,6 +48,8 @@ usage(void)
 int
 main(int argc, char *argv[])
 {
+	int nocol = 0;
+
 	srand(time(NULL));
 	channel = stderr;
 	char ansi[20];
