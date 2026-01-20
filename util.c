@@ -1,5 +1,6 @@
 static void
-eprint(const char *fmt, ...) {
+eprint(const char *fmt, ...)
+{
 	va_list ap;
 
 	va_start(ap, fmt);
@@ -12,7 +13,8 @@ eprint(const char *fmt, ...) {
 }
 
 static void
-makeansi(const char *hex, char *out) {
+makeansi(const char *hex, char *out)
+{
 	int r = 0, g = 0, b = 0;
 	sscanf(hex + 1, "%02x%02x%02x", &r, &g, &b);
 	snprintf(out, 32, "\x1b[38;2;%d;%d;%dm", r, g, b);
@@ -20,7 +22,8 @@ makeansi(const char *hex, char *out) {
 
 
 char*
-rstr(char *str, const char *substr, const char *rep) {
+rstr(char *str, const char *substr, const char *rep)
+{
 	char *pos = strstr(str, substr);
 	while (pos != NULL) {
 		memmove(pos + strlen(rep), pos + strlen(substr), 
