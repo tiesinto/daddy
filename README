@@ -1,7 +1,8 @@
 daddy - a C mommy clone
 -----------------------
-daddy is an implementation of mommy written in C with suckless software as a
-the basis for him. 
+daddy is an implementation of mommy written in C with suckless software as the
+basis for him. Should work on most Unix systems but he's only been tested on
+OpenBSD, Artix and Debian.
 
 This program differs from the mommy POSIX shell script in several ways:
 * The caregivers' pronouns are assigned to their names, allowing you to have
