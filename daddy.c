@@ -28,8 +28,7 @@ static char errbuf[4096];
 static char *opt_eval = NULL;
 static char *opt_status = "0";
 int crand;
-static FILE *channel = Nint nocol = 0;
-ULL;
+static FILE *channel = NULL;
 
 #include "config.h"
 #include "util.c"
@@ -104,15 +103,15 @@ main(int argc, char *argv[])
 	char resbuf[4096];
 	strlcpy(resbuf, response[crand], sizeof(resbuf));   
 
-	rstr(resbuf, "%%SWEETIE%%", sweetie[yrand]);
-	rstr(resbuf, "%%DISPARAGEMENT%%", disparagement[wrand]);
-	rstr(resbuf, "%%CAREGIVER%%", caregivers[drand].name);
-	rstr(resbuf, "%%GIFT%%", caregivers[drand].gift);
-	rstr(resbuf, "%%THEY%%", caregivers[drand].they);
-	rstr(resbuf, "%%THEM%%", caregivers[drand].them);
-	rstr(resbuf, "%%THEIR%%", caregivers[drand].their);
-	rstr(resbuf, "%%THEIRS%%", caregivers[drand].theirs);
-	rstr(resbuf, "%%THEMSELF%%", caregivers[drand].themself);
+	rstr(resbuf, "{sweetie}", sweetie[yrand]);
+	rstr(resbuf, "{disparagement}", disparagement[wrand]);
+	rstr(resbuf, "{caregiver}", caregivers[drand].name);
+	rstr(resbuf, "{gift}", caregivers[drand].gift);
+	rstr(resbuf, "{they}", caregivers[drand].they);
+	rstr(resbuf, "{them}", caregivers[drand].them);
+	rstr(resbuf, "{their}", caregivers[drand].their);
+	rstr(resbuf, "{theirs}", caregivers[drand].theirs);
+	rstr(resbuf, "{themself}", caregivers[drand].themself);
 
 	fprintf(channel, "%s%s%s%s", nocol ? "" : ansi,
 			resbuf, ending, nocol ? "" : "\x1b[0m");   
