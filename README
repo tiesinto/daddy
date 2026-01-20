@@ -49,7 +49,9 @@ zsh:
 
 precmd() is ideal for daddy as some of his responses may take up several lines,
 which leads to unpredictable behaviour with $RPS1 unless you want to remove his
-multiline responses from your config.h or pipe him into sed beforehand.
+multiline responses from your config.h or pipe him into sed beforehand. If you
+have anything else in precmd(), daddy must be the first command, otherwise $?
+will evaluate to the exit code of the prior command in precmd().
 
 If -e and -s are used simultaneously, -s takes precedence.
 
