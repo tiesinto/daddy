@@ -7,7 +7,7 @@ This program differs from the mommy POSIX shell script in several ways:
 * The caregivers' pronouns are assigned to their names, allowing you to have
   several caregivers of different genders which can be chosen randomly;
 * This adds cargo-mommy's 'denigrating terms' and 'part' (here changed to
-  'fluid') for more flexibility with NSFW prompts;
+  'gift') for more flexibility with NSFW prompts;
 * Changed from 'mommy' to 'daddy' by default so you can be the ultimate Freud
   case study.
 
