@@ -1,0 +1,68 @@
+daddy - a C mommy clone
+-----------------------
+daddy is an implementation of mommy written in C with suckless software as a
+the basis for him. 
+
+This program differs from the mommy POSIX shell script in several ways:
+* The caregivers' pronouns are assigned to their names, allowing you to have
+  several caregivers of different genders which can be chosen randomly;
+* This adds cargo-mommy's 'denigrating terms' and 'part' (here changed to
+  'fluid') for more flexibility with NSFW prompts;
+* Changed from 'mommy' to 'daddy' by default so you can be the ultimate Freud
+  case study.
+
+I was frustrated with the speed of mommy on older hardware but I'm addicted to
+being praised and have daddy issues, so I decided to rewrite her in C with the
+configuration in a config.h so that he will run instantly.
+
+
+Installation
+------------
+Run this as root:
+
+	make clean install
+
+
+Running daddy
+-------------
+By default daddy will output to stderr; to print to stdout instead use -1.
+daddy will also color his output according to what you defined in your
+config.h, however you can force unstyled text by using -c. daddy can also run
+commands using whatever is set as sh in your PATH by using -e:
+
+	daddy -e "printf 'freud\n' | grep -q f"
+	daddy -e "printf 'freud\n' | grep -q x"
+
+If you want pipefail, you must add it to your sh command (provided your
+system's sh supports pipefail):
+
+	daddy -e 'set -o pipefail && cat sfdfsl | wc'
+
+daddy will evaluate exit codes passed to him using -s. Any exit code 1 or
+higher will prompt encouragement from daddy. Exit code 130 is ignored. This can
+be used in tandem with -1 in order to integrate daddy with your shell, e.g.
+zsh:
+
+	precmd(){
+		daddy -1 -s $?
+	}
+
+precmd() is ideal for daddy as some of his responses may take up several lines,
+which leads to unpredictable behaviour with $RPS1 unless you want to remove his
+multiline responses from your config.h or pipe him into sed beforehand.
+
+If -e and -s are used simultaneously, -s takes precedence.
+
+
+Configuration
+-------------
+To configure daddy simply create a custom config.h and recompile. Defaults can
+be found in config.def.h.
+
+
+Credits
+-------
+The bundled responses are taken from a few different mommies which are
+acknowledged in comments in the config.def.h.
+
+Thanks to fwdekker for inspiring me to make this.
