@@ -45,7 +45,7 @@ be used in tandem with -1 in order to integrate daddy with your shell, e.g.
 zsh:
 
 	precmd(){
-		daddy -1 -s $?
+		daddy -1s $?
 	}
 
 precmd() is ideal for daddy as some of his responses may take up several lines,
