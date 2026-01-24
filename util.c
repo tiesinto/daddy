@@ -27,7 +27,7 @@ rstr(char *str, const char *substr, const char *rep)
 	char *pos = strstr(str, substr);
 	while (pos != NULL) {
 		memmove(pos + strlen(rep), pos + strlen(substr), 
-				strlen(pos + strlen(substr)) + 1);
+			strlen(pos + strlen(substr)) + 1);
 		memcpy(pos, rep, strlen(rep));
 		pos = strstr(pos + strlen(rep), substr);
 	}
